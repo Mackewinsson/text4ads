@@ -40,6 +40,9 @@ h1.logo{
     color: #ffffff;
 }
 
+span#logo{
+    color: #1089FF;
+}
 /* -------------------------
             Grid System
 ---------------------------- */
