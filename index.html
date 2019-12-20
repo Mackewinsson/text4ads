@@ -32,27 +32,57 @@
                 <section class="adbuilder">
                     <form action="submit" method="post">
                         <h2>Ad builder</h2>
-                        <label for="Heading">Heading</label>
-                        <input type="text" id="Heading">
-                        <label for="subheading">Subheading</label>
-                        <input type="text" id="subheading">
-                        <fieldset>
-                            <label for="bullet-emoji">Bullet emoji</label>
-                            <select name="bullet_emoji" id="bullet-emoji">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                            <label for="bullets">Bullets points</label>
-                            <input type="" id="bullets">
-                        </fieldset>
+                        <div class="form-wrapper">
+                            <fieldset class="input-wrapper">
+                                <label for="Heading">Heading</label>
+                                <input type="text" id="Heading">
+                                <button class="button-edit" type="submit"><i class="fas fa-pen"></i></button>
+                                <button class="button-add" type="submit"><i class="fas fa-plus"></i></button>
+                            </fieldset>
+                            <fieldset class="input-wrapper">
+                                <label for="subheading">Subheading</label>
+                                <input type="text" id="subheading">
+                                <button class="button-edit" type="submit"><i class="fas fa-pen"></i></button>
+                                <button class="button-add" type="submit"><i class="fas fa-plus"></i></button>
+                            </fieldset>
+                            <fieldset class="multiple">
+                                <label for="bullet-emoji">Emoji</label>
+                                <select name="bullet_emoji" id="bullet-emoji">
+                                    <option value="">✔</option>
+                                    <option value="">→</option>
+                                    <option value="">☞</option>
+                                    <option value="">◾</option>
+                                    <option value="">🔴</option>
+                                    <option value="">⚫</option>
+                                    <option value="">🔵</option>
+                                    <option value="">⏩</option>
+                                    <option value="">➡</option>
+                                    <option value="">🔹</option>
+                                </select>
+                                <label for="bullet-number">Number of bullets</label>
+                                <select name="bullet_number" id="bullet-number">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                    <option value="">7</option>
+                                    <option value="">8</option>
+                                    <option value="">9</option>
+                                    <option value="">10</option>
+                                </select>
+                            </fieldset>
+                            <fieldset class="input-wrapper">     
+                                <label for="bullets">Bullets points</label>
+                                <input type="text" id="bullets">
+                                <button class="button-edit" type="submit"><i class="fas fa-pen"></i></button>
+                                <button class="button-add" type="submit"><i class="fas fa-plus"></i></button>
+                            </fieldset>
+                            <fieldset class="input-wrapper bullet-add-close"> 
+                                <button class="add-bullet"><span>Add bullet point</span></button>
+                            </fieldset>
+                        </div>
                     </form>    
                 </section>
                 <section class="previsualizer">
@@ -66,6 +96,7 @@
                 </section>
             </main>    <!-- End Main content -->
         </div><!-- End Main wrapper-->
+    <script src="https://kit.fontawesome.com/99f0e76c2f.js" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
