@@ -310,7 +310,7 @@ form h2{
 /* -------------------------
     EMOJI BUTTON STYLES
 ---------------------------- */
-button > * {
+button > i {
     pointer-events: none;
   }
 
