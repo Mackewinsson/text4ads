@@ -319,13 +319,12 @@ button > * {
     position: absolute;
     top: -23px;
     left: 0px;
-    background-color: lightgoldenrodyellow;
+    background-color: lightgray;
     width: 100%;
     height: 50px;
-    display: none; /* This should be change dinamicaly to FLEX */
+    display: none;
     justify-content: space-around;
     align-items: center;
- 
 }
 
 .emoji-window span{
