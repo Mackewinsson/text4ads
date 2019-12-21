@@ -279,8 +279,19 @@ form h2{
     width: 50px;
     cursor: pointer;
 }
+.button-emoji:focus{
+    outline: none;
+}
 
-.emoji-toggle{
+
+/* -------------------------
+    EMOJI BUTTON STYLES
+---------------------------- */
+button > * {
+    pointer-events: none;
+  }
+
+.emoji-window{
     display: none;
     position: absolute;
     top: -23px;
@@ -291,9 +302,10 @@ form h2{
     display: none; /* This should be change dinamicaly to FLEX */
     justify-content: space-around;
     align-items: center;
+ 
 }
 
-.emoji-toggle span{
+.emoji-window span{
 
     cursor: pointer;
     text-align: center;
@@ -304,9 +316,10 @@ form h2{
     width: 100%;
     border: 1px solid #E5E5E5;
     font-size: 1em;
+    transition: all 0.5s ease;
 }
 
-.emoji-toggle span:hover{
+.emoji-window span:hover{
 
     cursor: pointer;
     text-align: center;
@@ -318,3 +331,4 @@ form h2{
     border: 1px solid #E5E5E5;
     font-size: 1.5em;
 }
+
