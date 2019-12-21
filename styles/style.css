@@ -246,8 +246,17 @@ form h2{
     border: 0px;
     background-color: lightblue;
     cursor: pointer; 
+    transition: all 0.5s ease;
     
 }
+
+.button-edit:focus{
+    outline: none;
+}
+
+/* .button-edit:hover{
+    font-size: 1.2em;
+} */
 
 .button-add{
 
@@ -262,8 +271,17 @@ form h2{
     font-weight: bold;
     width: 50px;
     cursor: pointer;
+    transition: all 0.5s ease;
 
 }
+
+.button-add:focus{
+    outline: none;
+}
+
+/* .button-add:hover{
+    font-size: 1.2em;
+} */
 
 .button-emoji{
 
@@ -278,9 +296,14 @@ form h2{
     font-weight: bold;
     width: 50px;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .button-emoji:focus{
     outline: none;
+}
+
+.button-emoji:hover{
+    font-size: 1.2em;
 }
 
 
