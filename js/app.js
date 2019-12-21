@@ -1,14 +1,22 @@
+// GLOBAL VARIABLES
+
 const form = document.querySelector('.form-wrapper');
 // const emojiWindow = document.querySelectorAll('.emoji-window');
 
+
+// ENVENT LISTENER FOR CLICKS ON THE FORM
 form.addEventListener('click', (e) =>{
     e.preventDefault();
+
+// SHOW THE EMOJI WINDOW
+    
     // Selects only the button element and triggers the click event to show .emoji-window
-    if(e.target.tagName == 'BUTTON' && e.target.className == 'button-emoji'){
-        let button = e.target;
-        let buttonIcon = button.firstElementChild;
-        let fieldSet = button.parentNode;
-        let emojiWindow = fieldSet.lastElementChild;
+
+    if(e.target.tagName === 'BUTTON' && e.target.className === 'button-emoji'){
+        const button = e.target;
+        const buttonIcon = button.firstElementChild;
+        const fieldSet = button.parentNode;
+        const emojiWindow = fieldSet.lastElementChild;
         if(emojiWindow.style.display === 'none' || emojiWindow.style.display == ''){
             emojiWindow.style.display = 'flex';
             buttonIcon.className = 'fas fa-arrow-down';
@@ -18,24 +26,29 @@ form.addEventListener('click', (e) =>{
             buttonIcon.className = 'fas fa-smile-wink';
         };
     };
+
+// INSERTS EMOJIS INTO INPUT FIELD
     if (e.target.tagName == 'SPAN'){
 
-        let span = e.target;
-        let emojiWindow = span.parentNode;
-        let fieldSet = emojiWindow.parentNode;
-        let input = fieldSet.children[1];
-        let emojiContent = span.textContent;
-        // get current text of the input
-        let value = input.value;
-        // save selection start and end position
-        let start = input.selectionStart;
-        let end = input.selectionEnd;
-        // update the value with our text inserted
-        input.value = value.slice(0, start) + emojiContent + value.slice(end);
-        // update cursor to be at the end of insertion
-        input.selectionStart = input.selectionEnd = start; // insert this at the end of this statement if needed ( + emojiContent.length)
-
+        const span = e.target;
+        const emojiWindow = span.parentNode;
+        const fieldSet = emojiWindow.parentNode;
+        const label = fieldSet.firstElementChild;
+        const input = label.nextElementSibling;
+        const emojiContent = span.textContent;
+        function insertAtCursor (input, textToInsert) {
+            // make sure we have focus in the right input
+            input.focus();
+            // and just run the command
+            document.execCommand('insertText', false /*no UI*/, textToInsert);
+          }
+        insertAtCursor(input, emojiContent);
     };
+
+    if (e.target.className === 'add-bullet') {
+
+        console.log(e.target);
+    }
 });
 
 

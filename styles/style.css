@@ -160,7 +160,7 @@ i{
     font-size: 1.5em;    
 }
 
-button.add-bullet{
+.add-bullet{
 
     background-color: #fff;
     height: 50px;
@@ -174,7 +174,7 @@ button.add-bullet{
 
 }
 
-button.add-bullet:hover{
+.add-bullet:hover{
 
     background-color: #fff;
     height: 50px;
@@ -183,7 +183,6 @@ button.add-bullet:hover{
     border: 5px dashed lightblue;
     display: flex;
     width: 100%;
-    cursor: pointer;
     font-size: 1.2em;
 
 }
