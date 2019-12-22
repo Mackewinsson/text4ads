@@ -125,6 +125,7 @@ form::after{
 .form-wrapper{
 
     padding: 0px 5%;
+    margin: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -220,11 +221,11 @@ form h2{
     color: #fff;
     padding: 5%;
     border-radius: 5px 5px 0px 0px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     justify-content: center;
 }
 
-.button-edit{
+.button-minus{
 
     position: absolute;
     bottom: 0px;
@@ -234,13 +235,13 @@ form h2{
     font-weight: bold;
     width: 50px;
     border: 0px;
-    background-color: lightblue;
+    background-color: lightcoral;
     cursor: pointer; 
     transition: all 0.5s ease;
     
 }
 
-.button-edit:focus{
+.button-minus:focus{
     outline: none;
 }
 
@@ -293,6 +294,14 @@ form h2{
 }
 
 .button-emoji:hover{
+    font-size: 1.2em;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
     font-size: 1.2em;
 }
 

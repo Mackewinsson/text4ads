@@ -17,14 +17,18 @@ form.addEventListener('click', (e) =>{
         const buttonIcon = button.firstElementChild;
         const fieldSet = button.parentNode;
         const emojiWindow = fieldSet.lastElementChild;
+        const arrowEmoji = document.createElement('img');
+        arrowEmoji.src = 'icons/arrow.svg';
+        const smileyEmoji = document.createElement('img');
+        smileyEmoji.src = 'icons/smiley.svg';
         if(emojiWindow.style.display === 'none' || emojiWindow.style.display == ''){
             emojiWindow.style.display = 'flex';
-            buttonIcon.className = 'fas fa-arrow-down';
-             
+            button.removeChild(buttonIcon);
+            button.appendChild(arrowEmoji);
         } else {
             emojiWindow.style.display = 'none';
-            buttonIcon.classList.remove = 'fas fa-arrow-down';
-            buttonIcon.className = 'fas fa-smile-wink';
+            button.removeChild(buttonIcon);
+            button.appendChild(smileyEmoji);
         };
 
     } else if (e.target.tagName == 'SPAN'){
@@ -36,6 +40,9 @@ form.addEventListener('click', (e) =>{
         const input = label.nextElementSibling;
         const emojiContent = span.textContent;
         const buttonIcon = fieldSet.children[4];
+        const iconArrow = buttonIcon.firstElementChild;
+        const smileyEmoji = document.createElement('img');
+        smileyEmoji.src = 'icons/smiley.svg';
 
         function insertAtCursor (input, textToInsert) {
             // make sure we have focus in the right input
@@ -46,7 +53,11 @@ form.addEventListener('click', (e) =>{
         insertAtCursor(input, emojiContent);
         
         emojiWindow.style.display = 'none';
-        
+        buttonIcon.removeChild(iconArrow);
+        buttonIcon.appendChild(smileyEmoji);
+
+// ADS A NEW BULLET POINT
+
     } else if (e.target.className === 'add-bullet') {
 
         const addBullet = e.target;
@@ -62,6 +73,11 @@ form.addEventListener('click', (e) =>{
         emojiWindow.style.top = '-50px'
         form.insertBefore(newBulletPoint, addBulletPointButton);
 
+    } else if (e.target.className === 'button-minus') {
+
+        const buttonMinus = e.target;
+        const fieldSet = buttonMinus.parentNode;
+        fieldSet.style.display = 'none';
 
     };
 });
