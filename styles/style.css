@@ -46,26 +46,17 @@ span#logo{
 /* -------------------------
             Grid System
 ---------------------------- */
-div.main-wrapper{
-
-    display: grid;
-    grid-template-columns: 150px 1fr 150px;
-    grid-template-rows: 1920px;
-    grid-template-areas: 
-    ". main ."
-    ;
-}
 
 main.wrapper{
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 100px 1fr 1fr 100px;
     grid-template-rows: 0.5fr 1fr 1fr 1fr;
     grid-template-areas: 
-        "instructions instructions"
-        "adbuilder previsualizer"
-        "linkbuilder linkbuilder"
-        "copylink copylink";
+        ". instructions instructions ."
+        ". adbuilder previsualizer ."
+        ". linkbuilder linkbuilder ."
+        ". copylink copylink .";
 }
 
 section.instructions{
@@ -309,7 +300,7 @@ form h2{
 /* -------------------------
     EMOJI BUTTON STYLES
 ---------------------------- */
-button > i {
+button > * {
     pointer-events: none;
   }
 

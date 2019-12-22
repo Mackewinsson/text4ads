@@ -23,12 +23,11 @@ form.addEventListener('click', (e) =>{
              
         } else {
             emojiWindow.style.display = 'none';
+            buttonIcon.classList.remove = 'fas fa-arrow-down';
             buttonIcon.className = 'fas fa-smile-wink';
         };
-    };
 
-// INSERTS EMOJIS INTO INPUT FIELD
-    if (e.target.tagName == 'SPAN'){
+    } else if (e.target.tagName == 'SPAN'){
 
         const span = e.target;
         const emojiWindow = span.parentNode;
@@ -36,6 +35,8 @@ form.addEventListener('click', (e) =>{
         const label = fieldSet.firstElementChild;
         const input = label.nextElementSibling;
         const emojiContent = span.textContent;
+        const buttonIcon = fieldSet.children[4];
+
         function insertAtCursor (input, textToInsert) {
             // make sure we have focus in the right input
             input.focus();
@@ -43,12 +44,26 @@ form.addEventListener('click', (e) =>{
             document.execCommand('insertText', false /*no UI*/, textToInsert);
           }
         insertAtCursor(input, emojiContent);
+        
+        emojiWindow.style.display = 'none';
+        
+    } else if (e.target.className === 'add-bullet') {
+
+        const addBullet = e.target;
+        const fieldSet = addBullet.parentNode;
+        const bulletInput =  fieldSet.previousElementSibling;
+        const cta = form.lastElementChild;
+        const addBulletPointButton = cta.previousElementSibling;
+        const newBulletPoint = bulletInput.cloneNode(true);
+        newBulletPoint.firstElementChild.textContent = '';
+        const emojiButton = newBulletPoint.children[4];
+        emojiButton.style.top = '0px';
+        const emojiWindow = newBulletPoint.children[5];
+        emojiWindow.style.top = '-50px'
+        form.insertBefore(newBulletPoint, addBulletPointButton);
+
+
     };
-
-    if (e.target.className === 'add-bullet') {
-
-        console.log(e.target);
-    }
 });
 
 
