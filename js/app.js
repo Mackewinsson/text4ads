@@ -8,7 +8,6 @@ const form = document.querySelector('.form-wrapper');
 form.addEventListener('click', (e) =>{
     e.preventDefault();
 
-// SHOW THE EMOJI WINDOW
     
     // Selects only the button element and triggers the click event to show .emoji-window
 
@@ -30,6 +29,12 @@ form.addEventListener('click', (e) =>{
             button.removeChild(buttonIcon);
             button.appendChild(smileyEmoji);
         };
+
+    } else if (e.target.className === 'button-clear'){
+
+        const buttonCLear = e.target;
+        const input = buttonCLear.previousElementSibling;
+        input.value = '';
 
     } else if (e.target.tagName == 'SPAN'){
 
@@ -73,15 +78,15 @@ form.addEventListener('click', (e) =>{
         emojiWindow.style.top = '-50px'
         form.insertBefore(newBulletPoint, addBulletPointButton);
 
-    } else if (e.target.className === 'button-minus') {
-
-        const buttonMinus = e.target;
-        const fieldSet = buttonMinus.parentNode;
-        fieldSet.style.display = 'none';
-
+    } else if (e.target.className === 'button-erase') {
+        if(form.children.length > 5){
+            const buttonErase = e.target;
+            const fieldSet = buttonErase.parentNode;
+            const form = fieldSet.parentNode;
+            form.removeChild(fieldSet);
+        };
     };
 });
-
 
 
 
