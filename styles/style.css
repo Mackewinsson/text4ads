@@ -42,38 +42,40 @@ nav.navbar {
     background-color: #1089FF;
 }
 
-.circle3{
+.line1{
 
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background-color: #1089FF;
-    position: absolute;
-    top: -10px;
-    left: 50%;
+    width: 50%;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    position: relative;
+
 }
 
-.circle3::after{
+.line1::before{
 
+    position: absolute;
     content: '';
-    display: block;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    width: 48vh;
-    height: 2px;
-    z-index: -1;
-}
-
-.circle4{
-
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50px;
     background-color: #1089FF;
+    bottom: -15px;
+    right: -10px;
+
+}
+
+.line1::after{
+
     position: absolute;
-    top: -10px;
-    left: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #1089FF;
+    bottom: -15px;
+    left: -10px;
+
 }
 /* -------------------------
     END CIRCLE GRAFICS
@@ -113,6 +115,7 @@ section.instructions{
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
 }
 
 section.adbuilder{
@@ -151,9 +154,10 @@ section.copylink{
         grid-area: main;
         display: grid;
         grid-template-columns: 100px 1fr 1fr 100px;
-        grid-template-rows: 0.25fr 1fr 1fr 1fr;
+        grid-template-rows: 0.25fr 0.10fr 1fr 1fr 1fr;
         grid-template-areas: 
             ". instructions instructions ."
+            ". circle-grafic circle-grafic ."
             ". adbuilder previsualizer ."
             ". linkbuilder linkbuilder ."
             ". copylink copylink .";
@@ -162,6 +166,14 @@ section.copylink{
     section.instructions{
         grid-area: instructions;
 
+    }
+
+    .circle-grafic-wrapper{
+
+        grid-area: circle-grafic;
+        display: flex;
+        justify-content: center;
+    
     }
 
     section.adbuilder{
@@ -220,7 +232,7 @@ form::after{
 
 .form-wrapper{
 
-    padding: 0px 5%;
+    padding: 0px 5% 5% 5%;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -361,7 +373,7 @@ form fieldset{
     outline: none;
 }
 
-.button-add{
+.button-tip{
 
     position: absolute;
     bottom: 0px;
@@ -369,6 +381,7 @@ form fieldset{
     height: 50px;
     border: 0px;
     background-color: lightgreen;
+    color: #fff;
     font-size: 0.8em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -378,7 +391,28 @@ form fieldset{
 
 }
 
-.button-add:focus{
+.button-tip .tooltip{
+    display: none;
+    position: absolute;
+    background-color: lightskyblue;
+    top: -60px;
+    left: 0px;
+    min-width: 300px;
+    min-height: 50px;
+    z-index: 500;
+}
+
+.button-tip .tooltip::before{
+
+    content: '';
+    border-top: 5px solid lightskyblue;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    bottom: -5px;
+}
+
+.button-tip:focus{
     outline: none;
 }
 
@@ -405,14 +439,34 @@ form fieldset{
     font-size: 1.2em;
 }
 
+button img{
+
+    width: 25px;
+}
+
 button:focus{
     outline: none;
 }
 
-button:hover{
+/* button:hover{
     font-size: 1.2em;
-}
+} */
 
+
+.submit-prev{
+
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1089FF;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Varela Round', sans-serif;
+
+}
 
 /* -------------------------
     EMOJI BUTTON STYLES

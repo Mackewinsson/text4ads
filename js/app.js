@@ -1,7 +1,6 @@
 // GLOBAL VARIABLES
 
 const form = document.querySelector('.form-wrapper');
-// const emojiWindow = document.querySelectorAll('.emoji-window');
 
 
 // ENVENT LISTENER FOR CLICKS ON THE FORM
@@ -76,14 +75,23 @@ form.addEventListener('click', (e) =>{
         emojiButton.style.top = '0px';
         const emojiWindow = newBulletPoint.children[5];
         emojiWindow.style.top = '-50px'
-        form.insertBefore(newBulletPoint, addBulletPointButton);
+        form.insertBefore(newBulletPoint, fieldSet);
 
     } else if (e.target.className === 'button-erase') {
-        if(form.children.length > 5){
+        if(form.children.length > 6){
             const buttonErase = e.target;
             const fieldSet = buttonErase.parentNode;
             const form = fieldSet.parentNode;
             form.removeChild(fieldSet);
+        };
+    } else if (e.target.className === 'button-tip'){
+
+        const buttonTip = e.target;
+        const tooltip = buttonTip.lastElementChild;
+        if(tooltip.style.display === 'none' || tooltip.style.display == ''){
+            tooltip.style.display = 'inline-block';
+        } else {
+            tooltip.style.display = 'none';
         };
     };
 });
